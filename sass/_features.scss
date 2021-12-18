@@ -3,6 +3,28 @@
 
   margin: 15rem 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  //grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(25rem, 1fr)
+  ); // responsive column number
   grid-gap: 6rem;
+}
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr; // min-content == auto
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem;
+  align-items: start; // fix the small text extra white spaces
+
+  &__icon {
+    fill: $color-primary;
+    width: 4.5rem;
+    height: 4.5rem;
+    grid-row: 1 / span 2; // -1==span2 but -1 only work with explicit grid
+    transform: translateY(-1rem);
+  }
+  &__text {
+    font-size: 1.7rem;
+  }
 }
