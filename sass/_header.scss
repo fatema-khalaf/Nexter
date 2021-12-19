@@ -16,6 +16,14 @@
   grid-template-columns: minmax(min-content, max-content);
   grid-row-gap: 1.5rem;
   justify-content: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1/-1;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 5rem;
+  }
   &__logo {
     height: 3rem;
     justify-self: center;
@@ -43,12 +51,12 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 3rem;
-
+    justify-items: center;
     align-items: center;
     img {
       max-height: 2.5rem;
       max-width: 100%;
-      filter: brightness(50%);
+      filter: brightness(70%);
     }
   }
 }

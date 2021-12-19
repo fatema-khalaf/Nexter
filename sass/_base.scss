@@ -17,7 +17,8 @@ $font-display: "Josefin Sans", sans-serif;
 // Responsive breakpoints
 $bp-largest: 75em; //1200px/16px
 $bp-large: 62.5em;
-
+$bp-medium: 50em;
+$bp-small: 37.5em;
 *,
 *::before,
 *::after {
@@ -58,5 +59,13 @@ body {
       [center-end]
       minmax(6rem, 1fr)
       [full-end];
+  }
+  @media only screen and (max-width: $bp-medium) {
+    // calc(100vh-6rem) the entier vh - sidebar height
+    /* grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content min-content repeat(
+        3,
+        min-content
+      );*/
+    grid-template-rows: 6rem calc(100vh - 6rem); //this will do the same as the above code
   }
 }
